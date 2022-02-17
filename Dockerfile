@@ -47,7 +47,7 @@ RUN cd /etc/yum.repos.d && \
 
 # Install PHP modules
 RUN yum-config-manager --enable remi-php74 && \
-  yum -y install \
+    yum -y install \
     php \
     php-cli \
     php-curl \
@@ -89,8 +89,8 @@ RUN curl -sS https://getcomposer.org/installer | php -- \
 RUN yum -y install nodejs
 
 # Install GRUNT tool and CLI tool
-RUN npm install grunt@1.3.0 --save-dev
-RUN npm install -g grunt-cli
+# RUN npm install grunt@1.3.0 --save-dev
+# RUN npm install -g grunt-cli
 
 # Disable services management by systemd.
 RUN systemctl disable httpd.service
