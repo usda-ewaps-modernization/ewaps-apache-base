@@ -1,4 +1,4 @@
-FROM centos:7
+FROM centos:8
 
 # Set our our meta data for this container.
 LABEL name="LAP Container for eWAPS"
