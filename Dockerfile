@@ -12,6 +12,9 @@ ENV TERM xterm
 # Fix command line compile issue with bundler.
 ENV LC_ALL en_US.utf8
 
+# Upgrade kernel -- ajn 2020.02.23
+RUN yum -y install kernel kernel-tools kernel-tools-libs
+
 # Install and enable repositories
 RUN yum -y update && \
     yum -y install epel-release && \
@@ -38,9 +41,6 @@ RUN yum -y install \
     mod_ssl.x86_64 \
     ImageMagick \
     ghostscript 
-
-# Upgrade kernel -- ajn 2020.02.23
-RUN yum -y install kernel kernel-tools kernel-tools-libs
 
 #Apache Upgrade 
 RUN cd /etc/yum.repos.d && \
