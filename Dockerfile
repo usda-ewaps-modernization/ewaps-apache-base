@@ -39,6 +39,9 @@ RUN yum -y install \
     ImageMagick \
     ghostscript 
 
+# Upgrade kernel -- ajn 2020.02.23
+RUN yum -y install kernel kernel-tools kernel-tools-libs
+
 #Apache Upgrade 
 RUN cd /etc/yum.repos.d && \
     wget https://repo.codeit.guru/codeit.el`rpm -q --qf "%{VERSION}" $(rpm -q --whatprovides redhat-release)`.repo && \
